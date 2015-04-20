@@ -1,0 +1,95 @@
+﻿<html ng-app="demo">
+<head>
+	<title>Main Page</title>
+	<link rel="shortcut icon" type="image/png" href="image/4.png"/>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/plug-ins/1.10.6/integration/bootstrap/3/dataTables.bootstrap.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<!-- Maps -->
+	<link rel="stylesheet" href="css/maps.css">
+	<!--<link rel="stylesheet" href="css/checkbox.css">-->
+
+	<style type="text/css">
+	.navbar {
+		margin-bottom: 0;
+	}
+	</style>
+
+	<!--Google map api-->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+	
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<!--AngularJs-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.1/angular-route.min.js"></script>
+	<script src="js/script.js"></script>
+	<script type="text/javascript">
+	function myFunction() {
+		var form = document.getElementById("form-id");
+		document.getElementById("your-id").addEventListener("click", function () {
+			form.submit();
+		});
+	}
+	</script>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-xs navbar-default" id="my-navbar-1">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<img src="image/4.png" class="navbar-brand" style="width:60px; height:60px; margin-top: -5px;">
+				<a href="" class="navbar-brand" >TrackLab</a>
+				
+			</div>
+			<div class="collapse navbar-collapse navbar-right" id="navbar-collapse-1" ng-controller="empcontroller">
+				<ul class="nav navbar-nav">
+					<li class="dropdown" ng-model="myvalue">
+						<a href="" class="dropdown-toggle" id="drop" data-toggle="dropdown"><b><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;User</b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" ng-click="insertdata()">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div><!--End container-->
+	</nav><!--End navbar-->
+
+	<nav class="navbar navbar-inverse navbar-default" id="my-navbar-2">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#home" data-toggle="tab" id="home">Home</a></li>
+				<li><a href="#places" data-toggle="tab" id="place">My Places</a></li>
+			</ul>
+		</div><!--End container-->
+	</nav><!--End navbar-->
+
+	<hr>
+	<div ng-view ></div>
+	<div ng-controller="empcontroller">
+		<input type="hidden" ng-model="name" id="name">
+		<input type="hidden" ng-model="lat" id="lat">
+		<input type="hidden" ng-model="lng" id="lng">
+		<a style="display:none;" id="cl" ng-click="insertdata()">Page</a>
+	</div>
+
+	<footer class="footer">
+      <div class="container">
+        <center><p class="text-muted">&copy; Copyright Himanshu Soni</p></center>
+      </div>
+    </footer>
+
+</body>
+</html>

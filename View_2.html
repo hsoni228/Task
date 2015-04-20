@@ -1,0 +1,41 @@
+﻿<script src="js/sorttable.js"></script> 
+<div class="container" ng-controller="customersCtrl">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+                                     
+                    <form class="form-inline">
+                        <div class="form-group">
+                        <input type="text" class="form-control" id="subscription" placeholder="Search" style="width:300px;">
+                        <a href="" class="btn btn-md btn-info">Delete</a>
+                        <a href="" class="btn btn-md btn-info">Share</a>
+                    </div>
+                    </form>
+                    
+                    <hr>
+                    <table id="example" class="sortable table table-striped table-bordered" cellspacing="0" width="100%">
+
+                      <thead>
+                         <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="x in names">
+                            <td style="text-align: center; vertical-align: middle;"><input type="checkbox" value="None" id="{{x.Srno}}" name="group" style="height:15px; width:15px;"/></td>
+                            <td><a href="mailto:?subject=My%20Location&body=My%20Location%20is%20http://localhost/TrackLab/Main_Page.html%23/location/20/{{x.Lat}}/{{x.Lng}}">{{x.Name}}</a></td>
+                            <td>{{x.Lat}}</td>
+                            <td>{{x.Lng}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!--End row-->
+</div>
